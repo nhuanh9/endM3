@@ -1,0 +1,13 @@
+<table>
+  <tr *ngFor="let book of books" >
+    <div *ngIf="!book.read">
+      <td>{{book.name}}</td>
+      <td><a href="">Đọc</a></td>
+    </div>
+  </tr>
+</table>
+<form action="" #formBook = "ngForm" (ngSubmit)="addBook(formBook)">
+  <input type="text" ngModel name="name">
+  <input type="hidden" ngModel name="read">
+  <input type="submit" value="Thêm">
+</form>
