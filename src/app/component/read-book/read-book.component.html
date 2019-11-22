@@ -1,1 +1,8 @@
-<p>read-book works!</p>
+<table>
+  <tr *ngFor="let book of books" >
+    <div *ngIf="book.read">
+      <td>{{book.name}}</td>
+      <td><a href="">Đọc lại</a></td>
+    </div>
+  </tr>
+</table>

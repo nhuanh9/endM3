@@ -15,6 +15,10 @@ export class ListBookComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.showListBook();
+  }
+
+  showListBook() {
     this.bookService.getList().subscribe(next => {
       this.books = next;
     });
@@ -23,9 +27,9 @@ export class ListBookComponent implements OnInit {
   addBook(formBook) {
     this.bookService.add(formBook.value).subscribe(() => {
       console.log('Thêm thành công!');
+      formBook.resetForm();
     }, error1 => {
       console.log('Thêm thất bại! ' + error1);
     });
-    this.ngOnInit();
   }
 }
