@@ -10,6 +10,10 @@ const routes: Routes = [
     component: ListBookComponent
   },
   {
+    path: 'list-book/:id',
+    component: ListBookComponent
+  },
+  {
     path: 'list-read-book',
     component: ReadBookComponent
   }

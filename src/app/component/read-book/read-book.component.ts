@@ -23,4 +23,13 @@ export class ReadBookComponent implements OnInit {
       this.books = next;
     });
   }
+
+  reReadBook(id: number) {
+    this.books[id].read = false;
+    this.bookService.edit(id + '', this.books[id]).subscribe(() => {
+      console.log('Sửa thành công');
+    }, error1 => {
+      console.log('Lỗi ' + error1);
+    });
+  }
 }

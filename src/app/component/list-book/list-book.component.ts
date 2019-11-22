@@ -32,4 +32,13 @@ export class ListBookComponent implements OnInit {
       console.log('Thêm thất bại! ' + error1);
     });
   }
+
+  readBook(id: number) {
+    this.books[id].read = true;
+    this.bookService.edit(id + '', this.books[id]).subscribe(() => {
+      console.log('Sửa thành công');
+    }, error1 => {
+      console.log('Lỗi ' + error1);
+    });
+  }
 }

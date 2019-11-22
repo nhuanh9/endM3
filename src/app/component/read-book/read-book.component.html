@@ -2,7 +2,7 @@
   <tr *ngFor="let book of books" >
     <div *ngIf="book.read">
       <td>{{book.name}}</td>
-      <td><a href="">Đọc lại</a></td>
+      <td><a [routerLink]="['/list-book', book.id]" (click)="reReadBook(book.id)">Đọc</a></td>
     </div>
   </tr>
 </table>
